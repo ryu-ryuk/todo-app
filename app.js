@@ -8,19 +8,20 @@ const app = express();
 connectDB();
 
 // Init Middleware
-app.use(express.json()); // Middleware to parse JSON requests
-
-// Root endpoint
-app.get('/', (req, res) => {
-    res.send('API is running...');
-});
+app.use(express.json());
 
 // Define Routes
 const authRouter = require('./routes/auth');
 const todosRouter = require('./routes/todos');
 
-app.use('/api/auth', authRouter); // Auth routes
-app.use('/api/todos', todosRouter); // Todos routes
+app.use('/api/auth', authRouter);
+app.use('/api/todos', todosRouter);
 
-const PORT = process.env.PORT || 3000;
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ success: false, msg: 'Server Error', error: err.message });
+});
+
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
