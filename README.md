@@ -7,7 +7,7 @@ This project is a **Todo Application** that allows users to register, log in, an
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Main Functionalities](#main-functionalities)
-- [How - It - Works](how-it-works)
+- [How-It-Works](how-it-works)
 - [Installation](#installation)
 - [API Endpoints](#api-endpoints)
 - [Usage](#usage)
