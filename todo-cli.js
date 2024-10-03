@@ -1,7 +1,11 @@
 const axios = require('axios');
 const readline = require('readline');
 
+<<<<<<< HEAD
 const API_URL = 'http://localhost:5000/api'; 
+=======
+const API_URL = 'http://localhost:5000'; 
+>>>>>>> origin/master
 const userData = {
   email: 'test@example.com', 
   password: 'password123'
@@ -30,6 +34,7 @@ async function loginAndAddTodo() {
         return;
       }
 
+<<<<<<< HEAD
       // Get task description input from command line
       rl.question('Enter your task description: ', async (taskDescription) => {
         if (!taskDescription) {
@@ -50,6 +55,15 @@ async function loginAndAddTodo() {
         rl.close();
       });
 
+=======
+      // Add the task
+      await axios.post(`${API_URL}/todos`, { title: taskTitle }, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+
+      console.log(`Task "${taskTitle}" added successfully!`);
+      rl.close();
+>>>>>>> origin/master
     });
 
   } catch (error) {

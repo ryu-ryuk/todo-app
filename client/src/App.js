@@ -217,6 +217,7 @@ function App() {
       <Box hidden={tabValue !== 1 && !token}>
         <Typography variant="h4">Register</Typography>
         <TextField 
+<<<<<<< HEAD
               label="Username" 
               value={newUserUsername} 
               onChange={(e) => setNewUserUsername(e.target.value)} 
@@ -242,6 +243,25 @@ function App() {
       </Box>
 
 
+=======
+          label="Email" 
+          value={newUserEmail} 
+          onChange={(e) => setNewUserEmail(e.target.value)} 
+          fullWidth 
+          margin="normal" 
+        />
+        <TextField 
+          label="Password" 
+          type="password" 
+          value={newUserPassword} 
+          onChange={(e) => setNewUserPassword(e.target.value)} 
+          fullWidth 
+          margin="normal" 
+        />
+        <Button onClick={handleRegister} variant="contained" color="primary" fullWidth>Register</Button>
+      </Box>
+
+>>>>>>> origin/master
       <Dialog open={openDialog} onClose={handleCloseDialog}>
         <DialogTitle>Edit Todo</DialogTitle>
         <DialogContent>

@@ -24,6 +24,7 @@ const todosRouter = require('./routes/todos');
 app.use('/api/auth', authRouter); 
 app.use('/api/todos', todosRouter); 
 
+<<<<<<< HEAD
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
     // Set the static folder to serve the React app
@@ -35,11 +36,20 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
+=======
+>>>>>>> origin/master
 // Error handling middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).json({ success: false, msg: 'Server Error', error: err.message });
 });
 
+<<<<<<< HEAD
+=======
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+>>>>>>> origin/master
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
