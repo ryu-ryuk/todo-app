@@ -1,7 +1,7 @@
 const axios = require('axios');
 const readline = require('readline');
 
-const API_URL = 'https://todo-i56txlbh1-ryus-projects-b6bc9d80.vercel.app'; 
+const API_URL = 'http://localhost:5000'; 
 const userData = {
   email: 'test@example.com', 
   password: 'password123'
