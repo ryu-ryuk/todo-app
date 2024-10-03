@@ -65,7 +65,7 @@ This project is a **Todo Application** that allows users to register, log in, an
 
 1. Clone the repository:
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/ryu-ryuk/todo-app.git
    cd todo-app 
    ```
 
