@@ -3,10 +3,9 @@ import axios from 'axios';
 import {
   TextField, Button, Container, Typography, List, ListItem, ListItemText,
   Tabs, Tab, Box, IconButton, Checkbox, Dialog, DialogTitle, DialogContent,
-  DialogActions, Snackbar
+  DialogActions, Snackbar, Alert
 } from '@mui/material';
 import { Delete, Edit } from '@mui/icons-material';
-import { Alert } from '@mui/material';
 
 function App() {
   const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
@@ -217,14 +216,6 @@ function App() {
       <Box hidden={tabValue !== 1 && !token}>
         <Typography variant="h4">Register</Typography>
         <TextField 
-<<<<<<< HEAD
-              label="Username" 
-              value={newUserUsername} 
-              onChange={(e) => setNewUserUsername(e.target.value)} 
-              fullWidth 
-              margin="normal" 
-        />
-        <TextField 
               label="Email" 
               value={newUserEmail} 
               onChange={(e) => setNewUserEmail(e.target.value)} 
@@ -242,26 +233,6 @@ function App() {
        <Button onClick={handleRegister} variant="contained" color="primary" fullWidth>Register</Button>
       </Box>
 
-
-=======
-          label="Email" 
-          value={newUserEmail} 
-          onChange={(e) => setNewUserEmail(e.target.value)} 
-          fullWidth 
-          margin="normal" 
-        />
-        <TextField 
-          label="Password" 
-          type="password" 
-          value={newUserPassword} 
-          onChange={(e) => setNewUserPassword(e.target.value)} 
-          fullWidth 
-          margin="normal" 
-        />
-        <Button onClick={handleRegister} variant="contained" color="primary" fullWidth>Register</Button>
-      </Box>
-
->>>>>>> origin/master
       <Dialog open={openDialog} onClose={handleCloseDialog}>
         <DialogTitle>Edit Todo</DialogTitle>
         <DialogContent>
@@ -287,9 +258,9 @@ function App() {
           <Button onClick={handleCloseDialog}>Cancel</Button>
           <Button onClick={handleSaveEdit}>Save</Button>
         </DialogActions>
-      </Dialog>
+        </Dialog>
 
-      <Snackbar open={snackbar.open} autoHideDuration={6000} onClose={handleCloseSnackbar}>
+        <Snackbar open={snackbar.open} autoHideDuration={6000} onClose={handleCloseSnackbar}>
         <Alert onClose={handleCloseSnackbar} severity={snackbar.severity} sx={{ width: '100%' }}>
           {snackbar.message}
         </Alert>
