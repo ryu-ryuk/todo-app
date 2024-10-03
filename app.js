@@ -1,5 +1,6 @@
 const express = require('express');
 const connectDB = require('./config/db');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
@@ -21,6 +22,10 @@ app.use('/api/todos', todosRouter);
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ success: false, msg: 'Server Error', error: err.message });
+});
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 const PORT = process.env.PORT || 5000;
