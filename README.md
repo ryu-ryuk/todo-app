@@ -75,12 +75,6 @@ This project is a **Todo Application** that allows users to register, log in, an
     npm install  
     ```
 
-3. Create a .env file in the root directory and add your MongoDB URI and JWT secret:
-    ```
-    MONGO_URI=<your_mongodb_uri>
-    JWT_SECRET=<your_jwt_secret>
-
-    ```
 4. Start the Application:
     ```
     npm start
