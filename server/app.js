@@ -1,5 +1,5 @@
 const express = require('express');
-const connectDB = require('./config/db'); // Adjust path if necessary
+const connectDB = require('./config/db');
 const path = require('path');
 const cors = require('cors');
 require('dotenv').config();
@@ -29,7 +29,7 @@ if (process.env.NODE_ENV === 'production') {
     // Set the static folder to serve the React app
     app.use(express.static(path.join(__dirname, '../client/build')));
 
-    // Handle any route that isn't explicitly defined (i.e., React frontend routes)
+    // Handle any route that isn't explicitly defined
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
     });
@@ -41,7 +41,7 @@ app.use((err, req, res, next) => {
     res.status(500).json({ success: false, msg: 'Server Error', error: err.message });
 });
 
-// Optional: Remove the below route if not needed
+// Optional: for cli
 // app.get('/', (req, res) => {
 //     res.sendFile(path.join(__dirname, 'index.html'));
 // });
