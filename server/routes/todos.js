@@ -3,18 +3,18 @@ const router = express.Router();
 const Todo = require('../models/Todo');
 const auth = require('../middleware/auth');
 
-// Add Todo route
+// Todo route
 router.post('/', auth, async (req, res) => {
   console.log('Received todo creation request:', req.body);
   const { title, description } = req.body;
 
   try {
-    // Check if user is authenticated (this is done in the auth middleware)
+    // Checks if user is authenticated (from auth middleware)
     if (!req.user) {
       return res.status(401).json({ success: false, msg: 'User not authenticated' });
     }
 
-    // Create a new Todo with the userId from the authenticated user
+    // Creates a new Todo with the userId from the authenticated user
     const newTodo = new Todo({
       title,
       description,
