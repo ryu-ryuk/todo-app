@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('../models/User'); // Adjust the path as needed
+const User = require('../models/User'); 
 const { body, validationResult } = require('express-validator');
 
 // Registration route with validation
